@@ -33,5 +33,41 @@ This project was created to practice basic Python concepts such as dictionaries,
 * Make the program interactive
 
 ## 🔄 Updates
-- Improved logic to correctly handle multiple toppers
-- Enhanced output clarity and robustness
+
+Phase 1
+
+-Implemented basic student performance analysis using Python
+-Calculated average marks and identified toppers
+-Used dictionaries and clean O(n) logic
+
+Phase 2
+
+-Migrated student data to CSV format
+-Implemented file reading and parsing logic
+-Added reusable functions for average calculation and topper detection
+
+Phase 3 (Current)
+
+-Refactored code into modular functions
+-Introduced main() entry point
+-Improved readability and maintainability
+-Structured code following industry-style Python practices
+
+🧠 Key Concepts & Skills
+
+-Time and space complexity analysis
+-Functional decomposition
+-File handling (CSV)
+-Core data structures (lists, dictionaries)
+-Clean and scalable logic design
+
+🛠️ Tech Stack
+
+-Language: Python 3
+-Data Format: CSV
+-Tools: Standard Python libraries
+
+📌 Current Status
+
+-Phase 3 complete.
+-Next: Advanced analytics and data insights.
