@@ -1,50 +1,50 @@
-def calculateAvg(marks):
-
+def calculate_avg(marks):
     return sum(marks) / len(marks)
 
-def loadStudents(filename):
 
+def load_students(filename):
     students = {}
-    with open("students.csv","r") as file:
+
+    with open(filename, "r") as file:
         lines = file.readlines()
 
     for line in lines[1:]:
         parts = line.strip().split(",")
-
         name = parts[0]
         marks = list(map(int, parts[1:]))
         students[name] = marks
-    
+
     return students
 
-def findToppers(students):
 
-    topper = []
+def find_toppers(students):
+    toppers = []
     highest_avg = 0
 
     for name, marks in students.items():
-        avg = calculateAvg(marks)
+        avg = calculate_avg(marks)
 
-        if (avg > highest_avg):
+        if avg > highest_avg:
             highest_avg = avg
-            topper = [name]
+            toppers = [name]
+        elif avg == highest_avg:
+            toppers.append(name)
 
-        elif (avg == highest_avg):
-            topper.append(name)
-
-    print(f"Name: {name}    Average Marks: {avg}")
-    return topper, highest_avg
-
-def main():
-    students = loadStudents("students.csv")
-    toppers, highestAvg = findToppers(students)
-
-    print()
+    return toppers, highest_avg
 
 
-    if len(toppers) == 1:
-        print("Topper:", toppers[0], "with an average mark of", highestAvg)
-    else:
-        print("Multiple Toppers: ",", ".join(toppers), "with an average mark of", highestAvg)
+def subject_averages(students):
+    subject_totals = []
+    student_count = len(students)
 
-main()
+    for marks in students.values():
+        if not subject_totals:
+            subject_totals = [0] * len(marks)
+
+        for i in range(len(marks)):
+            subject_totals[i] += marks[i]
+
+    return [total / student_count for total in subject_totals]
+
+
+def weakest_subject(subje_
