@@ -1,21 +1,28 @@
-students = {
-    "Ayaan": [59, 85, 90],
-    "Rahul": [60, 72, 68],
-    "Neha": [99, 85, 90],
-    "Sara": [55, 65, 58]
-}
+def calculateAvg(marks):
+    return sum(marks) / len(marks)
+
+students = {}
+with open("students.csv","r") as file:
+    lines = file.readlines()
+
+for line in lines[1:]:
+    parts = line.strip().split(",")
+
+    name = parts[0]
+    marks = list(map(int, parts[1:]))
+    students[name] = marks
 
 topper = []
 highest_avg = 0
 
 for name, marks in students.items():
-    avg = sum(marks) / len(marks)
+    avg = calculateAvg(marks)
 
     if (avg > highest_avg):
         highest_avg = avg
         topper = [name]
 
-    elif (avg == highest_avg and highest_avg != 0):
+    elif (avg == highest_avg):
         topper.append(name)
         highest_avg = avg
 
