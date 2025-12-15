@@ -31,3 +31,7 @@ This project was created to practice basic Python concepts such as dictionaries,
 * Handle multiple toppers with the same average
 * Improve input validation
 * Make the program interactive
+
+## 🔄 Updates
+- Improved logic to correctly handle multiple toppers
+- Enhanced output clarity and robustness
