@@ -1,6 +1,7 @@
-def calculate_avg(marks):
-    return sum(marks) / len(marks)
+import pandas as pd
+df = pd.read("students.csv")
 
+df["average"] = df[["sub1", "sub2", "sub3"]].mean(axis=1)                   # row-wise mean
 
 def load_students(filename):
     students = {}
@@ -15,7 +16,6 @@ def load_students(filename):
         students[name] = marks
 
     return students
-
 
 def find_toppers(students):
     toppers = []
@@ -32,7 +32,6 @@ def find_toppers(students):
 
     return toppers, highest_avg
 
-
 def subject_averages(students):
     subject_totals = []
     student_count = len(students)
@@ -46,14 +45,12 @@ def subject_averages(students):
 
     return [total / student_count for total in subject_totals]
 
-
 def weakest_subject(subject_avgs):
     weakest_index = 0
     for i in range(len(subject_avgs)):
         if subject_avgs[i] < subject_avgs[weakest_index]:
             weakest_index = i
     return weakest_index
-
 
 def performance_label(avg):
     if avg >= 85:
@@ -65,31 +62,5 @@ def performance_label(avg):
     else:
         return "Needs Improvement"
 
-
-def main():
-    students = load_students("students.csv")
-    toppers, highest_avg = find_toppers(students)
-
-    print("\nStudent Averages:")
-    for name, marks in students.items():
-        avg = calculate_avg(marks)
-        print(f"{name}: {avg}")
-
-    print("\nSubject-wise Averages:")
-    subject_avgs = subject_averages(students)
-    for i, avg in enumerate(subject_avgs):
-        print(f"Subject {i+1}: {avg}")
-
-    weakest = weakest_subject(subject_avgs)
-    print(f"\nWeakest Subject: Subject {weakest + 1}")
-
-    print("\nStudent Performance:")
-    for name, marks in students.items():
-        avg = calculate_avg(marks)
-        label = performance_label(avg)
-        print(f"{name}: {label}")
-
-    print("\nToppers:", ", ".join(toppers), "with average", highest_avg)
-
-
-main()
+print("\nStudent Averages:")
+print(df[["name", "average"]])
