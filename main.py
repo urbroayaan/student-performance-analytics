@@ -6,6 +6,9 @@ df["average"] = df[["sub1", "sub2", "sub3"]].mean(axis=1)                   # ro
 highest_avg = df["average"].max()
 toppers = df[df["average"] == highest_avg]["name"]
 
+subject_avgs = df[["sub1", "sub2", "sub3"]].mean()
+weakest_subject = df["average"].idxmin()                   # gives subject name with weakest mean and not mean value
+
 def load_students(filename):
     students = {}
 
@@ -69,3 +72,6 @@ print("\nStudent Averages:")
 print(df[["name", "average"]])
 
 print("Topper(s):", ",".join(toppers), "with average", highest_avg)
+
+print("\nSubject-wise Averages:")
+print(subject_avgs)
