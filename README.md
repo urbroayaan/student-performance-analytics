@@ -1,73 +1,132 @@
-# Student Average & Topper Finder
+# 📊 Student Performance Analytics System
 
-A simple Python program that calculates the average marks of students and identifies the topper based on the highest average score.
+A Python-based data analytics project that analyzes student academic performance using structured CSV data.  
+The project demonstrates clean coding practices, data processing, analytics, and industry-standard tools like **Pandas**.
 
-## 📌 Features
+---
 
-* Stores student marks using a dictionary
-* Calculates average marks for each student
-* Identifies the student with the highest average
-* Displays clear and readable output
+## 🚀 Project Overview
 
-## 🛠️ Technologies Used
+This project processes student marks data to:
+- Calculate individual student averages
+- Identify top-performing students (including tie handling)
+- Compute subject-wise performance trends
+- Detect the weakest subject overall
+- Classify students into performance categories
 
-* Python
+The project was built incrementally to emphasize **core logic first**, followed by **clean structure**, and finally **pandas-based analytics**.
 
-## ▶️ How to Run
+---
 
-1. Make sure Python is installed on your system
-2. Run the program using:
+## 🧩 Features
 
-   ```
-   python main.py
-   ```
+- 📂 CSV-based data ingestion  
+- 📈 Student-wise average calculation  
+- 🏆 Topper identification with tie handling  
+- 📊 Subject-wise average analysis  
+- ⚠️ Weakest subject detection  
+- 🏷️ Performance classification (Excellent / Good / Average / Needs Improvement)  
+- 🧼 Clean, modular, and readable code  
 
-## 🎯 Purpose
+---
 
-This project was created to practice basic Python concepts such as dictionaries, loops, conditional logic, and clean output formatting.
+## 🛠️ Tech Stack
 
-## 📈 Future Improvements
+- **Language:** Python 3  
+- **Libraries:** Pandas  
+- **Data Format:** CSV  
+- **Concepts Used:**  
+  - Data structures (lists, dictionaries)  
+  - Time & space complexity analysis  
+  - Functional decomposition  
+  - Vectorized data operations  
 
-* Handle multiple toppers with the same average
-* Improve input validation
-* Make the program interactive
+---
 
-## 🔄 Updates
+## 📁 Project Structure
 
-Phase 1
+student-performance-analytics/
+│
+├── students.csv # Input dataset
+├── main.py # Pandas-based analytics script
+└── README.md # Project documentation
 
--Implemented basic student performance analysis using Python
--Calculated average marks and identified toppers
--Used dictionaries and clean O(n) logic
+---
 
-Phase 2
+## 📄 Sample Input (`students.csv`)
 
--Migrated student data to CSV format
--Implemented file reading and parsing logic
--Added reusable functions for average calculation and topper detection
+name,sub1,sub2,sub3
+Ayaan,99,85,90
+Rahul,60,72,68
+Neha,88,91,84
+Sara,55,65,58
 
-Phase 3 (Current)
+---
 
--Refactored code into modular functions
--Introduced main() entry point
--Improved readability and maintainability
--Structured code following industry-style Python practices
+## 🖥️ Sample Output
 
-🧠 Key Concepts & Skills
+Student Averages:
+Ayaan 91.33
+Rahul 66.67
+Neha 87.67
+Sara 59.33
 
--Time and space complexity analysis
--Functional decomposition
--File handling (CSV)
--Core data structures (lists, dictionaries)
--Clean and scalable logic design
+Topper(s): Ayaan with average 91.33
 
-🛠️ Tech Stack
+Subject-wise Averages:
+sub1 75.5
+sub2 78.25
+sub3 75.0
 
--Language: Python 3
--Data Format: CSV
--Tools: Standard Python libraries
+Weakest Subject: sub3
 
-📌 Current Status
+Student Performance:
+Ayaan Excellent
+Rahul Average
+Neha Excellent
+Sara Average
 
--Phase 3 complete.
--Next: Advanced analytics and data insights.
+---
+
+## 🧠 Key Learnings
+
+- Difference between row-wise and column-wise operations
+- Why logic-first development makes analytics tools easier to use
+- How Pandas simplifies complex aggregation tasks
+- Writing scalable and interview-ready Python code
+- Translating raw data into meaningful insights
+
+---
+
+## ⏱️ Complexity Analysis
+
+- **Time Complexity:**  
+  - Student & subject analytics: `O(n × m)`  
+  - Vectorized operations handled efficiently by Pandas
+- **Space Complexity:**  
+  - `O(n + m)` for stored data and computed metrics  
+
+---
+
+## 📌 Project Status
+
+✅ Core analytics complete  
+✅ Pandas-based implementation complete  
+
+**Next planned enhancements:**
+- Data visualization using Matplotlib / Seaborn  
+- Support for dynamic number of subjects  
+- Exporting reports to CSV or PDF  
+
+---
+
+## ✨ Resume Bullet (You can use this)
+
+> Built a Python-based student performance analytics system using Pandas to process CSV data, compute subject-wise trends, identify top performers, and classify student performance with clean, modular code.
+
+---
+
+## 👤 Author
+
+**Ayaan Anildutt**  
+B.Tech Student | AI & Data Science  
