@@ -1,14 +1,21 @@
 import pandas as pd
-df = pd.read("students.csv")
 
-df["average"] = df[["sub1", "sub2", "sub3"]].mean(axis=1)                   # row-wise mean
+df = pd.read_csv("students.csv")
 
+# Student-wise average
+df["average"] = df[["sub1", "sub2", "sub3"]].mean(axis=1)           # row-wise mean
+
+# Topper(s)
 highest_avg = df["average"].max()
 toppers = df[df["average"] == highest_avg]["name"]
 
+# Subject-wise averages
 subject_avgs = df[["sub1", "sub2", "sub3"]].mean()
-weakest_subject = df["average"].idxmin()                   # gives subject name with weakest mean and not mean value
 
+# Weakest subject
+weakest_subject = subject_avgs.idxmin()         # gives subject name with weakest mean and not mean value
+
+# Performance labeling
 def performance_label(avg):
     if avg >= 85:
         return "Excellent"
@@ -21,10 +28,11 @@ def performance_label(avg):
 
 df["performance"] = df["average"].apply(performance_label)
 
+# Output
 print("\nStudent Averages:")
 print(df[["name", "average"]])
 
-print("Topper(s):", ",".join(toppers), "with average", highest_avg)
+print("\nTopper(s):", ", ".join(toppers), "with average", highest_avg)
 
 print("\nSubject-wise Averages:")
 print(subject_avgs)
