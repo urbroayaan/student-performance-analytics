@@ -48,8 +48,6 @@ student-performance-analytics/
 ├── main.py # Analytics + visualization script
 └── README.md # Documentation
 
-yaml
-Copy code
 
 ---
 
@@ -60,9 +58,6 @@ Ayaan,99,85,90
 Rahul,60,72,68
 Neha,88,91,84
 Sara,55,65,58
-
-yaml
-Copy code
 
 ---
 
@@ -89,8 +84,6 @@ Rahul Average
 Neha Excellent
 Sara Average
 
-yaml
-Copy code
 
 ---
 
