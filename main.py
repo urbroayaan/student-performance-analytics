@@ -1,9 +1,17 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("students.csv")
 
 # Student-wise average
 df["average"] = df[["sub1", "sub2", "sub3"]].mean(axis=1)           # row-wise mean
+
+plt.figure()
+plt.bar(df["name"], df["average"])
+plt.xlabel("Students")
+plt.ylabel("Average Marks")
+plt.title("Student Average Peroformance")
+plt.show()
 
 # Topper(s)
 highest_avg = df["average"].max()
@@ -11,6 +19,13 @@ toppers = df[df["average"] == highest_avg]["name"]
 
 # Subject-wise averages
 subject_avgs = df[["sub1", "sub2", "sub3"]].mean()
+
+plt.figure()
+plt.bar(subject_avgs.index, subject_avgs.values)
+plt.xlabel("Subjects")
+plt.ylabel("Average Marks")
+plt.title("Subject Wise Performance")
+plt.show()
 
 # Weakest subject
 weakest_subject = subject_avgs.idxmin()         # gives subject name with weakest mean and not mean value
